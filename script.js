@@ -1,0 +1,1 @@
+let listOfQuestions = document.querySelector('.questions')
