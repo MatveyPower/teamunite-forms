@@ -4,8 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="max-age=3600, must-revalidate"/>
     <title>Опрос</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Roboto:300,400,700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -31,7 +33,7 @@
             <button class="button-start" type="button">Начать</button>
         </section>
         <section class="wrapper-questions">
-            <form class='questions' name="questions">
+            <form action="https://httpbin.org/post" class='questions' method="POST" name="questions">
                 <label class="question question1">
                     <strong> Как тебе ПД?</strong>
                     <p>Вопрос 1/12</p>

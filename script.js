@@ -4,8 +4,8 @@ let windowToStartPolling = document.querySelector('.wrapper')
 let buttonToStartPolling = document.querySelector('.button-start')
 let buttonToConfirmAnswer = document.querySelector('.button-confirm-answer')
 
-let form = document.forms
-let questions = form.questions
+let forms = document.forms
+let currentForm = forms.questions
 let question1Field = questions.elements.question1
 
 
@@ -15,7 +15,7 @@ listOfQuestions.classList.add('display-none')
 
 buttonToStartPolling.addEventListener('click', startPolling)
 // buttonToConfirmAnswer.addEventListener('click', startPolling)
-buttonToConfirmAnswer.addEventListener('submit', submitForm)
+currentForm.addEventListener('submit', submitForm)
 
 
 function startPolling() {
@@ -34,7 +34,7 @@ function submitForm(event){
 
     fetch(api,{
         headers:{
-            'Content-Type': 'application/json; charset=utf-8 '
+            'Content-Type': 'application/json; charset=utf-8'
         },
         method:'POST',
         body: JSON.stringify(questions)
