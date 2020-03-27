@@ -1,8 +1,11 @@
 'use strict'
+document.cookie = 'expires=Tue, 19 Jan 2038 03:14:07 GMT'
+console.log(document.cookie)
 let listOfQuestions = document.querySelector('.wrapper-questions')
 let windowToStartPolling = document.querySelector('.wrapper')
 let buttonToStartPolling = document.querySelector('.button-start')
 let buttonToConfirmAnswer = document.querySelector('.button-confirm-answer')
+let windowToEndPolling = document.querySelector('.wrapper-end')
 
 let forms = document.forms
 let currentForm = forms.questions
@@ -12,6 +15,7 @@ let question1Field = questions.elements.question1
 
 
 listOfQuestions.classList.add('display-none')
+windowToEndPolling.classList.add('display-none')
 
 buttonToStartPolling.addEventListener('click', startPolling)
 // buttonToConfirmAnswer.addEventListener('click', startPolling)
@@ -39,4 +43,8 @@ function submitForm(event){
         method:'POST',
         body: JSON.stringify(questions)
     })
+
+    listOfQuestions.classList.add('display-none')
+    windowToEndPolling.classList.remove('display-none')
+
 }
