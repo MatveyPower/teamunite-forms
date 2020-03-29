@@ -10,6 +10,13 @@ let windowToEndPolling = document.querySelector('.wrapper-end')
 let forms = document.forms
 let currentForm = forms.questions
 let question1Field = questions.elements.question1
+console.log(questions.elements)
+let question2Field = questions.elements.question2
+let question3Field = questions.elements.question3
+let question4Field = questions.elements.question4
+let question5Field = questions.elements.question5
+let question6Field = questions.elements.question6
+let question7Field = questions.elements.question7
 
 
 
@@ -33,7 +40,13 @@ function submitForm(event){
     const api = 'https://httpbin.org/post'
 
     let questions = {
-        question1: question1Field.value
+        question1: question1Field.value,
+        question2: question2Field.value,
+        question3: question3Field.value,
+        question4: question4Field.value,
+        question5: question5Field.value,
+        question6: question6Field.value,
+        question7: question7Field.value,
     }
 
     fetch(api,{
