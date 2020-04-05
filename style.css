@@ -13,7 +13,6 @@ body{
 
 .header{
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     font-family: 'Roboto Light', sans-serif;
@@ -155,6 +154,8 @@ h1{
 
 @media only screen and (min-width : 1336px) {
     .header{
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
         font-size: 25px;
     }
 
@@ -170,23 +171,31 @@ h1{
     }
 
     h1{
+        font-family: 'Roboto', sans-serif;
         font-size: 25px;
     }
 
     .block-to-start p{
-        font-family: 'Regular', sans-serif;
+        font-family: 'Open Sans', sans-serif;
         font-size: 17px;
     }
 
     .block-to-end p{
-        font-family: 'Regular', sans-serif;
+        font-family: 'Open Sans', sans-serif;
         font-size: 17px;
     }
 
     .button-start{
         width: 145px;
         height: 43px;
-        margin-top: 150px; 
+        margin-top: 139px; 
+    }
+
+    .button-confirm-answer{
+        
+        width: 145px;
+        height: 43px;
+        
     }
 
     .questions{
@@ -198,14 +207,17 @@ h1{
     }
 
     .question strong{
+        font-family: 'Roboto', sans-serif;
         font-size: 25px;
     }
     
     .question p{
+        font-family: 'Open Sans', sans-serif;
         font-size: 15px;
     }
 
     .question input{
+        font-family: 'Open Sans', sans-serif;
         font-size: 15px;
         
     }
