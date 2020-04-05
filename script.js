@@ -12,10 +12,24 @@ surveyResultPage.classList.add('display-none')
 
 buttonToStartSurvey.addEventListener('click', startSurvey)
 buttonToSendAnswers.addEventListener('click', sendAnswers)
+window.addEventListener('load', getAnswerValues)
+
+
 
 function startSurvey() {
   surveyPreviewPage.classList.add('display-none')
   questionsPage.classList.remove('display-none')
+}
+
+function getAnswerValues(){
+    answerFields.forEach(answer => {
+        answer.value = localStorage.getItem(`${answer.id}`)
+        answer.addEventListener('input', setAnswerValues, answer)
+    })
+}
+
+function setAnswerValues(answer){
+    localStorage.setItem(answer.id,answer.value)
 }
 
 function sendAnswers(event) {
