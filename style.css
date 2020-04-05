@@ -17,21 +17,24 @@ body{
     justify-content: center;
     align-items: center;
     font-family: 'Roboto Light', sans-serif;
-    font-size: calc(1vw + 1.4em);
+    font-size: calc(1vw + 0.9em);
     padding: 62px 0 51px 0;
     width: 80%;
     margin: 0 auto;
 }
+
 .team-name{
     margin-bottom: 9px;
     margin-left: 8px;
     color: #242424;
 }
+
 .main{
     margin: 0 auto;
     width: 320px;
     margin-bottom: 72px;
 }
+
 .wrapper,.wrapper-end{
     background-color: #FFFFFF;
     display: flex;
@@ -44,23 +47,28 @@ body{
     margin: 0 22px;
     box-shadow: 0px 3px 6px #0000001A;
 }
+
 .block-to-start, .block-to-end{
     font-family: 'Roboto', sans-serif;
 }
+
 h1{
     font-size: 21px;
 }
+
 .block-to-start p{
     font-family: 'Open Sans', sans-serif;
     font-size: 13px;
     padding: 24px 0;
 }
+
 .block-to-end p{
     font-family: 'Open Sans', sans-serif;
     font-size: 13px;
     padding: 24px 0;
     margin-bottom: 109px;
 }
+
 .button-start{
     
     padding: 0;
@@ -78,6 +86,7 @@ h1{
     font-size: 14px;
     font-family: 'Roboto', sans-serif;
 }
+
 .button-confirm-answer{
     display: flex;
     justify-content: center;
@@ -101,6 +110,7 @@ h1{
     width: 275px;
     margin: 0 auto;
 }
+
 .question{
     background-color: #FFFFFF;
     display: flex;
@@ -112,16 +122,19 @@ h1{
     margin-bottom: 40px;
     
 }
+
 .question strong{
     margin-bottom: 8px;
     font-size: 21px;
 }
+
 .question p{
     margin-bottom: 17.5px;
     font-size: 13px;
     color: #B1B1B1;
 
 }
+
 .question input{
     border: none;
     border-bottom: 1px solid #B1B1B1;
@@ -130,10 +143,70 @@ h1{
     outline: none;
     
 }
+
 .question input::-webkit-input-placeholder { color: #B1B1B1; }
 
 .questions input:focus::-webkit-input-placeholder { color:transparent; }
 
 .display-none{
     display: none;
+}
+
+
+@media only screen and (min-width : 1336px) {
+    .header{
+        font-size: 25px;
+    }
+
+    .main{
+        width: 630px;
+    }
+
+    .wrapper,.wrapper-end{
+        justify-content: flex-start;
+        padding: 39px 40px;
+        margin: 0 auto;
+        height: 430px;
+    }
+
+    h1{
+        font-size: 25px;
+    }
+
+    .block-to-start p{
+        font-family: 'Regular', sans-serif;
+        font-size: 17px;
+    }
+
+    .block-to-end p{
+        font-family: 'Regular', sans-serif;
+        font-size: 17px;
+    }
+
+    .button-start{
+        width: 145px;
+        height: 43px;
+        margin-top: 150px; 
+    }
+
+    .questions{
+        width: 630px;
+    }
+
+    .question{
+        padding: 40px 39px;
+    }
+
+    .question strong{
+        font-size: 25px;
+    }
+    
+    .question p{
+        font-size: 15px;
+    }
+
+    .question input{
+        font-size: 15px;
+        
+    }
 }

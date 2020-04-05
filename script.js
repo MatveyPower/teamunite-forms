@@ -10,13 +10,16 @@ let windowToEndPolling = document.querySelector('.wrapper-end')
 let forms = document.forms
 let currentForm = forms.questions
 let question1Field = questions.elements.question1
-console.log(questions.elements)
 let question2Field = questions.elements.question2
 let question3Field = questions.elements.question3
 let question4Field = questions.elements.question4
 let question5Field = questions.elements.question5
 let question6Field = questions.elements.question6
 let question7Field = questions.elements.question7
+let question8Field = questions.elements.question8
+let question9Field = questions.elements.question9
+let question10Field = questions.elements.question10
+let question11Field = questions.elements.question11
 
 
 
@@ -37,7 +40,7 @@ function startPolling() {
 function submitForm(event){
     event.preventDefault()
 
-    const api = 'https://httpbin.org/post'
+    const api = 'http://teamunite-backend.herokuapp.com/api/v1/questions'
 
     let questions = {
         question1: question1Field.value,
@@ -47,6 +50,10 @@ function submitForm(event){
         question5: question5Field.value,
         question6: question6Field.value,
         question7: question7Field.value,
+        question8: question8Field.value,
+        question9: question9Field.value,
+        question10: question10Field.value,
+        question11: question11Field.value,
     }
 
     fetch(api,{
