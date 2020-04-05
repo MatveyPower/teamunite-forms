@@ -131,10 +131,42 @@ body {
 
 .questions__button {
   margin: 0 auto;
+  margin-bottom: 10px;
 }
+
+.questions__button--disabled{
+    opacity: 0.5;
+}
+.questions__circle-load{
+    margin:0 auto;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border-bottom: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    animation: 1s linear 0s normal none infinite running rot;
+}
+
+@keyframes rot {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 
 .display-none {
   display: none;
+}
+
+.questions__warning-text{
+    text-align: center;
+    color: #B22222;
+}
+
+.questions{
+    margin-bottom: 70px;
 }
 
 @media (min-width: 480px) {
