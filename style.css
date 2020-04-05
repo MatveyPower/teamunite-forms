@@ -1,225 +1,169 @@
-*{
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-
-body{
-    
-    background-color:#F7F5F8;
-
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
 }
 
-.header{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    font-family: 'Roboto Light', sans-serif;
-    font-size: calc(1vw + 0.9em);
-    padding: 62px 0 51px 0;
-    width: 80%;
-    margin: 0 auto;
+button:focus,
+input:focus,
+textarea:focus,
+a:focus {
+  outline: none;
 }
 
-.team-name{
-    margin-left: 6px;
-    color: #242424;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
 }
 
-.main{
-    margin: 0 auto;
-    width: 320px;
-    margin-bottom: 72px;
+ol,
+ul {
+  list-style: none;
 }
 
-.wrapper,.wrapper-end{
-    background-color: #FFFFFF;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 24px 14px;
-    border-radius: 10px;
-    font-size: calc(1vw + 0.6em);
-    
-    margin: 0 22px;
-    box-shadow: 0px 3px 6px #0000001A;
+body {
+  background-color: #f7f5f8;
+  color: #242424;
+  font-family: 'Open Sans', sans-serif;
 }
 
-.block-to-start, .block-to-end{
-    font-family: 'Roboto', sans-serif;
+.header__title {
+  font-weight: 300;
+}
+.content-wrapper {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  padding: 24px 15px;
+  width: 100%;
 }
 
-h1{
-    font-size: 21px;
+.wrapper {
+  max-width: 630px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.block-to-start p{
-    font-family: 'Open Sans', sans-serif;
-    font-size: 13px;
-    padding: 24px 0;
+.header__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+  padding-bottom: 50px;
 }
 
-.block-to-end p{
-    font-family: 'Open Sans', sans-serif;
-    font-size: 13px;
-    padding: 24px 0;
-    margin-bottom: 109px;
+.header__title {
+  font-size: 25px;
 }
 
-.button-start{
-    
-    padding: 0;
-    border: none;
-    font: inherit;
-    cursor: pointer;
-    width: 118px;
-    height: 39px;
-    margin: 0 auto;
-    background-color: #460EDE;
-    color: #FFFFFF;
-    border-radius: 10px;
-    margin-top: 70px;
-    box-shadow: 0px 3px 6px #00000029;
-    font-size: 14px;
-    font-family: 'Roboto', sans-serif;
+.header__logo-image {
+  margin-right: 6px;
 }
 
-.button-confirm-answer{
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    border: none;
-    font: inherit;
-    cursor: pointer;
-    width: 118px;
-    height: 39px;
-    background-color: #460EDE;
-    color: #FFFFFF;
-    border-radius: 10px;
-    box-shadow: 0px 3px 6px #00000029;
-    font-size: 14px;
-    margin: 0 auto;
-    font-family: 'Roboto', sans-serif;
+.title {
+  font-size: 21px;
 }
 
-.questions{
-    list-style: none;
-    width: 275px;
-    margin: 0 auto;
+.survey-preview__title {
+  margin-bottom: 24px;
 }
 
-.question{
-    background-color: #FFFFFF;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    padding: 24px 14px;
-    border-radius: 10px;
-    font-size: calc(1vw + 0.6em);
-    margin-bottom: 40px;
-    box-shadow: 0px 3px 6px #0000001A;
-    opacity: 1;
-    
+.survey-preview__text {
+  margin-bottom: 10px;
+  font-size: 13px;
 }
 
-.question strong{
-    margin-bottom: 8px;
-    font-size: 21px;
+.survey-preview__text:last-of-type {
+  margin-bottom: 80px;
 }
 
-.question p{
-    margin-bottom: 17.5px;
-    font-size: 13px;
-    color: #B1B1B1;
-
+.button {
+  display: block;
+  background-color: #460ede;
+  border-radius: 10px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  padding: 10px 40px;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 
-.question input{
-    border: none;
-    border-bottom: 1px solid #B1B1B1;
-    opacity: 1;
-    padding: 8.5px 0;
-    outline: none;
-    
+.survey-preview__button {
+  margin: 0 auto;
 }
 
-.question input::-webkit-input-placeholder { color: #B1B1B1; }
-
-.questions input:focus::-webkit-input-placeholder { color:transparent; }
-
-.display-none{
-    display: none;
+.question-item {
+  margin-bottom: 40px;
 }
 
+.question__title {
+  margin-bottom: 8px;
+}
 
-@media only screen and (min-width : 1336px) {
-    .header{
-        font-family: 'Roboto', sans-serif;
-        font-weight: 300;
-        font-size: 25px;
-    }
+.question__question-number {
+  font-size: 13px;
+  color: #b1b1b1;
+  margin-bottom: 25px;
+}
+.question__answer-text {
+  resize: none;
+  width: 100%;
+  height: 40px;
+  font-size: 13px;
+  font-family: 'Open Sans', sans-serif;
+  border: none;
+  border-bottom: 1px solid #b1b1b1;
+}
 
-    .main{
-        width: 630px;
-    }
+.questions__button {
+  margin: 0 auto;
+}
 
-    .wrapper,.wrapper-end{
-        justify-content: flex-start;
-        padding: 39px 40px;
-        margin: 0 auto;
-        height: 430px;
-    }
+.display-none {
+  display: none;
+}
 
-    h1{
-        font-family: 'Roboto', sans-serif;
-        font-size: 25px;
-    }
+@media (min-width: 480px) {
+  .content-wrapper {
+    padding: 40px;
+  }
 
-    .block-to-start p{
-        font-family: 'Open Sans', sans-serif;
-        font-size: 17px;
-    }
+  .survey-preview__text {
+    font-size: 17px;
+  }
 
-    .block-to-end p{
-        font-family: 'Open Sans', sans-serif;
-        font-size: 17px;
-    }
+  .survey-preview__text:last-of-type {
+    margin-bottom: 45px;
+  }
+  .title {
+    font-size: 25px;
+  }
 
-    .button-start{
-        width: 145px;
-        height: 43px;
-        margin-top: 139px; 
-    }
+  .question__question-number {
+    font-size: 15px;
+  }
+  .question__answer-text {
+    font-size: 15px;
+  }
+}
 
-    .button-confirm-answer{
-        
-        width: 145px;
-        height: 43px;
-        
-    }
-
-    .questions{
-        width: 630px;
-    }
-
-    .question{
-        padding: 40px 39px;
-    }
-
-    .question strong{
-        font-family: 'Roboto', sans-serif;
-        font-size: 25px;
-    }
-    
-    .question p{
-        font-family: 'Open Sans', sans-serif;
-        font-size: 15px;
-    }
-
-    .question input{
-        font-family: 'Open Sans', sans-serif;
-        font-size: 15px;
-        
-    }
+@media (min-width: 1360px) {
+  .header__wrapper {
+    padding-top: 110px;
+    padding-bottom: 30px;
+  }
 }
