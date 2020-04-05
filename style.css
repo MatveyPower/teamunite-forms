@@ -14,7 +14,7 @@ body{
 .header{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     font-family: 'Roboto Light', sans-serif;
     font-size: calc(1vw + 0.9em);
     padding: 62px 0 51px 0;
@@ -23,8 +23,7 @@ body{
 }
 
 .team-name{
-    margin-bottom: 9px;
-    margin-left: 8px;
+    margin-left: 6px;
     color: #242424;
 }
 
