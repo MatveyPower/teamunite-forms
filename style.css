@@ -44,12 +44,14 @@ body {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
   padding: 24px 15px;
   width: 100%;
+  
 }
 
 .wrapper {
   max-width: 630px;
   margin: 0 auto;
   padding: 0 20px;
+  
 }
 
 .header__wrapper {
@@ -58,14 +60,6 @@ body {
   align-items: center;
   padding-top: 60px;
   padding-bottom: 50px;
-}
-
-.header__title {
-  font-size: 25px;
-}
-
-.header__logo-image {
-  margin-right: 6px;
 }
 
 .title {
@@ -157,6 +151,8 @@ body {
 
 .questions {
   margin-bottom: 70px;
+  opacity: 0;
+  transition: 2s ease-in-out;
 }
 
 @media (min-width: 480px) {
@@ -188,4 +184,20 @@ body {
     padding-top: 110px;
     padding-bottom: 30px;
   }
+}
+
+.open{
+  transform: translateX(100%);
+  opacity: 0;
+  transition: 2s ease-in-out;
+}
+.center{
+  transform: translateX(0);
+  opacity: 1;
+  transition: 2s ease-in-out;
+}
+.close{
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: 2s ease-in-out;
 }

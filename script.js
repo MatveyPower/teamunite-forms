@@ -6,6 +6,7 @@ const buttonToStartSurvey = document.querySelector('.survey-preview__button')
 const buttonToSendAnswers = document.querySelector('.questions__button')
 const surveyResultPage = document.querySelector('.survey-result')
 const answerFields = [...document.querySelectorAll('.question__answer-text')]
+const wrapper = document.querySelectorAll('.wrapper')
 
 questionsPage.classList.add('display-none')
 surveyResultPage.classList.add('display-none')
@@ -15,8 +16,18 @@ buttonToSendAnswers.addEventListener('click', sendAnswers)
 window.addEventListener('load', activateLocalStorage)
 
 function startSurvey() {
-  surveyPreviewPage.classList.add('display-none')
-  questionsPage.classList.remove('display-none')
+  surveyPreviewPage.classList.add('close')
+  setTimeout(() => {
+    surveyPreviewPage.classList.add('display-none')
+  }, 2000)
+
+  setTimeout(() => {
+    questionsPage.classList.add('open')
+    questionsPage.classList.remove('display-none')
+  }, 2000)
+  setTimeout(() => {
+    questionsPage.classList.add('center')
+  }, 2100)
 }
 
 function activateLocalStorage() {
@@ -70,8 +81,18 @@ function sendAnswers(event) {
     .then((response) => {
       if (response.ok) {
         localStorage.clear()
-        questionsPage.classList.add('display-none')
-        surveyResultPage.classList.remove('display-none')
+        questionsPage.classList.add('close')
+        setTimeout(() => {
+          questionsPage.classList.add('display-none')
+        }, 2000)
+
+        setTimeout(() => {
+          surveyResultPage.classList.add('open')
+          surveyResultPage.classList.remove('display-none')
+        }, 2000)
+        setTimeout(() => {
+          surveyResultPage.classList.add('center')
+        }, 2100)
       } else {
         handleError()
       }
