@@ -8,6 +8,8 @@ const surveyResultPage = document.querySelector('.survey-result')
 const answerFields = [...document.querySelectorAll('.question__answer-text')]
 const wrapper = document.querySelectorAll('.wrapper')
 
+autosize(answerFields)
+
 questionsPage.classList.add('display-none')
 surveyResultPage.classList.add('display-none')
 
@@ -19,15 +21,15 @@ function startSurvey() {
   surveyPreviewPage.classList.add('close')
   setTimeout(() => {
     surveyPreviewPage.classList.add('display-none')
-  }, 2000)
+  }, 500)
 
   setTimeout(() => {
     questionsPage.classList.add('open')
     questionsPage.classList.remove('display-none')
-  }, 2000)
+  }, 500)
   setTimeout(() => {
     questionsPage.classList.add('center')
-  }, 2100)
+  }, 600)
 }
 
 function activateLocalStorage() {
@@ -62,6 +64,47 @@ function sendAnswers(event) {
   const url = 'https://api.teamunite.ru/api/v1/questions'
 
   const answers = answerFields.map((field) => field.value)
+ 
+  for (let i = 0; i <= answers.length; i++) {
+    if (answers[i]) {
+      fetch(url, {
+        headers: {
+          'Content-Type': 'application/json; charset=utf-8',
+        },
+        method: 'POST',
+        body: JSON.stringify(answers),
+      })
+        .then((response) => {
+          if (response.ok) {
+            localStorage.clear()
+            questionsPage.classList.add('close')
+            setTimeout(() => {
+              questionsPage.classList.add('display-none')
+            }, 500)
+    
+            setTimeout(() => {
+              surveyResultPage.classList.add('open')
+              surveyResultPage.classList.remove('display-none')
+            }, 500)
+            setTimeout(() => {
+              surveyResultPage.classList.add('center')
+            }, 600)
+          } else {
+            warningTextParagraph.textContent = 'Ошибка сервера, повтори попытку'
+            handleError()
+          }
+        })
+        .catch((error) => {
+          warningTextParagraph.textContent = 'Ошибка сервера, повтори попытку'
+          handleError()
+        })
+        break
+    }
+    if (i === answers.length) {
+      warningTextParagraph.textContent = 'Ты не заполнил ни одного поля'
+      handleError()
+    }
+  }
 
   function handleError() {
     buttonToSendAnswers.disabled = false
@@ -70,34 +113,4 @@ function sendAnswers(event) {
     buttonToSendAnswers.lastElementChild.classList.add('display-none')
     warningTextParagraph.classList.remove('display-none')
   }
-
-  fetch(url, {
-    headers: {
-      'Content-Type': 'application/json; charset=utf-8',
-    },
-    method: 'POST',
-    body: JSON.stringify(answers),
-  })
-    .then((response) => {
-      if (response.ok) {
-        localStorage.clear()
-        questionsPage.classList.add('close')
-        setTimeout(() => {
-          questionsPage.classList.add('display-none')
-        }, 2000)
-
-        setTimeout(() => {
-          surveyResultPage.classList.add('open')
-          surveyResultPage.classList.remove('display-none')
-        }, 2000)
-        setTimeout(() => {
-          surveyResultPage.classList.add('center')
-        }, 2100)
-      } else {
-        handleError()
-      }
-    })
-    .catch((error) => {
-      handleError()
-    })
 }

@@ -12,6 +12,13 @@ button {
   background-color: transparent;
   cursor: pointer;
 }
+button:hover{
+  background-color: #7347EF;
+}
+
+button:focus{
+  background-color: #5032A7;
+}
 
 button:focus,
 textarea:focus {
@@ -75,10 +82,6 @@ body {
   font-size: 13px;
 }
 
-.survey-preview__text:last-of-type {
-  margin-bottom: 80px;
-}
-
 .button {
   display: block;
   background-color: #460ede;
@@ -116,11 +119,15 @@ body {
   border: none;
   border-bottom: 1px solid #b1b1b1;
 }
+.question__answer-text:focus{
+  border-bottom: 1px solid #5032A7;
+}
 
 .questions__button {
   margin: 0 auto;
   margin-bottom: 10px;
 }
+
 .questions__circle-load {
   margin: 0 auto;
   width: 20px;
@@ -164,9 +171,6 @@ body {
     font-size: 17px;
   }
 
-  .survey-preview__text:last-of-type {
-    margin-bottom: 45px;
-  }
   .title {
     font-size: 25px;
   }
@@ -189,15 +193,15 @@ body {
 .open{
   transform: translateX(100%);
   opacity: 0;
-  transition: 2s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 .center{
   transform: translateX(0);
   opacity: 1;
-  transition: 2s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 .close{
   transform: translateX(-100%);
   opacity: 0;
-  transition: 2s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
