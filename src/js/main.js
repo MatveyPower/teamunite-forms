@@ -74,7 +74,7 @@ function sendAnswers(event) {
   const answers = answerFields.map((field) => field.value)
 
   if (checkAllEmptyFields(answers)) {
-    warningTextParagraph.textContent = 'Ты не заполнил ни одного поля'
+    warningTextParagraph.textContent = 'Ты не заполнил(а) ни одного поля'
     handleError()
     return
   }
