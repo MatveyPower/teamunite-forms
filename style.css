@@ -12,12 +12,12 @@ button {
   background-color: transparent;
   cursor: pointer;
 }
-button:hover{
-  background-color: #7347EF;
+button:hover {
+  background-color: #7347ef;
 }
 
-button:focus{
-  background-color: #5032A7;
+button:focus {
+  background-color: #5032a7;
 }
 
 button:focus,
@@ -51,14 +51,12 @@ body {
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
   padding: 24px 15px;
   width: 100%;
-  
 }
 
 .wrapper {
   max-width: 630px;
   margin: 0 auto;
   padding: 0 20px;
-  
 }
 
 .header__wrapper {
@@ -72,7 +70,7 @@ body {
 .title {
   font-size: 21px;
 }
-.survey-preview{
+.survey-preview {
   position: relative;
   left: 0;
 }
@@ -84,6 +82,12 @@ body {
 .survey-preview__text {
   margin-bottom: 10px;
   font-size: 13px;
+}
+.survey-preview__text:last-of-type {
+  margin-bottom: 50px;
+}
+.survey-preview__text:last-of-type.survey-preview__text--without-margin {
+  margin: 0;
 }
 
 .button {
@@ -123,8 +127,8 @@ body {
   border: none;
   border-bottom: 1px solid #b1b1b1;
 }
-.question__answer-text:focus{
-  border-bottom: 1px solid #5032A7;
+.question__answer-text:focus {
+  border-bottom: 1px solid #5032a7;
 }
 
 .questions__button {
@@ -171,6 +175,14 @@ body {
     padding: 40px;
   }
 
+  .survey-preview__text:last-of-type {
+    margin-bottom: 45px;
+  }
+
+  .survey-preview__text:last-of-type.survey-preview__text--without-margin {
+    margin: 0;
+  }
+
   .survey-preview__text {
     font-size: 17px;
   }
@@ -182,6 +194,7 @@ body {
   .question__question-number {
     font-size: 15px;
   }
+
   .question__answer-text {
     font-size: 15px;
   }
@@ -194,19 +207,19 @@ body {
   }
 }
 
-.open{
+.open {
   position: relative;
   left: 100%;
   opacity: 0;
   transition: 0.5s ease-in-out;
 }
-.center{
+.center {
   position: relative;
   left: 0;
   opacity: 1;
   transition: 0.5s ease-in-out;
 }
-.close{
+.close {
   position: relative;
   left: -100%;
   opacity: 0;
