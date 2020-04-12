@@ -31,8 +31,16 @@ function startSurvey() {
 }
 
 function activateLocalStorage() {
-  if (localStorage.length) {
-    buttonToStartSurvey.textContent = 'Продолжить'
+  // if (localStorage.length) {
+  //   buttonToStartSurvey.textContent = 'Продолжить'
+  // }
+
+  let keys = Object.keys(localStorage)
+  for (let key of keys) {
+    if (key.includes('question') && localStorage.getItem(key)){ 
+      buttonToStartSurvey.textContent = 'Продолжить'
+      break
+    }
   }
 
   answerFields.forEach((answer) => {
