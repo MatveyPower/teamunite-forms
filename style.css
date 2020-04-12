@@ -12,6 +12,13 @@ button {
   background-color: transparent;
   cursor: pointer;
 }
+button:hover {
+  background-color: #7347ef;
+}
+
+button:focus {
+  background-color: #5032a7;
+}
 
 button:focus,
 textarea:focus {
@@ -60,16 +67,12 @@ body {
   padding-bottom: 50px;
 }
 
-.header__title {
-  font-size: 25px;
-}
-
-.header__logo-image {
-  margin-right: 6px;
-}
-
 .title {
   font-size: 21px;
+}
+.survey-preview {
+  position: relative;
+  left: 0;
 }
 
 .survey-preview__title {
@@ -80,9 +83,11 @@ body {
   margin-bottom: 10px;
   font-size: 13px;
 }
-
 .survey-preview__text:last-of-type {
-  margin-bottom: 80px;
+  margin-bottom: 50px;
+}
+.survey-preview__text:last-of-type.survey-preview__text--without-margin {
+  margin: 0;
 }
 
 .button {
@@ -122,11 +127,15 @@ body {
   border: none;
   border-bottom: 1px solid #b1b1b1;
 }
+.question__answer-text:focus {
+  border-bottom: 1px solid #5032a7;
+}
 
 .questions__button {
   margin: 0 auto;
   margin-bottom: 10px;
 }
+
 .questions__circle-load {
   margin: 0 auto;
   width: 20px;
@@ -157,6 +166,8 @@ body {
 
 .questions {
   margin-bottom: 70px;
+  opacity: 0;
+  transition: 2s ease-in-out;
 }
 
 @media (min-width: 480px) {
@@ -164,13 +175,18 @@ body {
     padding: 40px;
   }
 
+  .survey-preview__text:last-of-type {
+    margin-bottom: 45px;
+  }
+
+  .survey-preview__text:last-of-type.survey-preview__text--without-margin {
+    margin: 0;
+  }
+
   .survey-preview__text {
     font-size: 17px;
   }
 
-  .survey-preview__text:last-of-type {
-    margin-bottom: 45px;
-  }
   .title {
     font-size: 25px;
   }
@@ -178,6 +194,7 @@ body {
   .question__question-number {
     font-size: 15px;
   }
+
   .question__answer-text {
     font-size: 15px;
   }
@@ -188,4 +205,23 @@ body {
     padding-top: 110px;
     padding-bottom: 30px;
   }
+}
+
+.open {
+  position: relative;
+  left: 100%;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+}
+.center {
+  position: relative;
+  left: 0;
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+}
+.close {
+  position: relative;
+  left: -100%;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
 }

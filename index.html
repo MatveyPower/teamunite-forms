@@ -14,7 +14,6 @@
         rel="stylesheet">
     <link rel="dns-prefetch" href="https://teamunite.ru">
     <link rel="preconnect" href="https://teamunite.ru">
-    <link rel="preload" href="script.js">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://teamunite.ru">
@@ -34,7 +33,7 @@
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
         (function (m, e, t, r, i, k, a) {
-        m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
             m[i].l = 1 * new Date(); k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
         })
             (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
@@ -56,8 +55,7 @@
 
     <header class="header">
         <div class="wrapper header__wrapper">
-            <img class="header__logo-image" src="image/Logo.png" width="56px" height="29px" alt="Логотип">
-            <h2 class="header__title">TeamUnite</h2>
+            <img class="header__logo-image" src="image/logo.svg" alt="Логотип">
         </div>
     </header>
 
@@ -67,10 +65,10 @@
             <section class="survey-preview content-wrapper">
                 <h1 class="survey-preview__title">Опрос по проектной деятельности</h1>
                 <p class="survey-preview__text">
-                    Привет! Мы - команда подбора студенческих команд, помоги нам избавить университет от проблем с
-                    организацией проектной деятельности, поделись своим мнением о том, что тебе нравится/не нравится
+                    Привет! Мы - команда подбора студенческих команд, нам важно услышать твое мнение по поводу
+                    организации проектной деятельности. Поделись своими мыслями, а мы постараемся сделать пд лучше
                 </p>
-                <p class="survey-preview__text">Время прохождения опроса 5-10 минут</p>
+                <p class="survey-preview__text">Время прохождения опроса 5-7 минут</p>
                 <button class="button survey-preview__button" type="button">Начать</button>
             </section>
             <section class="questions">
@@ -78,32 +76,88 @@
                     <ul class="questions__list">
                         <li class="question question-item content-wrapper">
                             <label for="question1">
-                                <h3 class="question__title title">Какие плюсы или минусы ты можешь выделить при записи
-                                    на Пд
-                                    в Политехе?</h3>
-                                <p class="question__question-number">Вопрос 1/11</p>
+                                <h3 class="question__title title">Как ты узнаешь о проектной деятельности?</h3>
+                                <p class="question__question-number">Вопрос 1/10</p>
                             </label>
                             <textarea name="" id="question1" placeholder="Введите текст"
                                 class="question__answer-text"></textarea>
                         </li>
                         <li class="question question-item content-wrapper">
                             <label for="question2">
-                                <h3 class="question__title title">Какие плюсы или минусы ты можешь выделить при записи
-                                    на Пд
-                                    в Политехе?</h3>
-                                <p class="question__question-number">Вопрос 1/11</p>
+                                <h3 class="question__title title">По каким критериям выбираешь проект?</h3>
+                                <p class="question__question-number">Вопрос 2/10</p>
                             </label>
                             <textarea name="" id="question2" placeholder="Введите текст"
                                 class="question__answer-text"></textarea>
                         </li>
                         <li class="question question-item content-wrapper">
                             <label for="question3">
-                                <h3 class="question__title title">Какие плюсы или минусы ты можешь выделить при записи
-                                    на Пд
-                                    в Политехе?</h3>
-                                <p class="question__question-number">Вопрос 1/11</p>
+                                <h3 class="question__title title">У тебя есть сплоченная команда, с которой работаешь на
+                                    протяжении всего обучения или каждый семестр новая?</h3>
+                                <p class="question__question-number">Вопрос 3/10</p>
                             </label>
                             <textarea name="" id="question3" placeholder="Введите текст"
+                                class="question__answer-text"></textarea>
+                        </li>
+                        <li class="question question-item content-wrapper">
+                            <label for="question4">
+                                <h3 class="question__title title"> Что тебе нравится в пд?</h3>
+                                <p class="question__question-number">Вопрос 4/10</p>
+                            </label>
+                            <textarea name="" id="question4" placeholder="Введите текст"
+                                class="question__answer-text"></textarea>
+                        </li>
+                        <li class="question question-item content-wrapper">
+                            <label for="question5">
+                                <h3 class="question__title title">Какие недостатки можешь выделить в организации пд?
+                                </h3>
+                                <p class="question__question-number">Вопрос 5/10</p>
+                            </label>
+                            <textarea name="" id="question5" placeholder="Введите текст"
+                                class="question__answer-text"></textarea>
+                        </li>
+                        <li class="question question-item content-wrapper">
+                            <label for="question6">
+                                <h3 class="question__title title">Чего не хватает на этапах выбора проекта и записи на
+                                    него?</h3>
+                                <p class="question__question-number">Вопрос 6/10</p>
+                            </label>
+                            <textarea name="" id="question6" placeholder="Введите текст"
+                                class="question__answer-text"></textarea>
+                        </li>
+                        <li class="question question-item content-wrapper">
+                            <label for="question7">
+                                <h3 class="question__title title">Как выстроен рабочий процесс и общение внутри команды
+                                    ?</h3>
+                                <p class="question__question-number">Вопрос 7/10</p>
+                            </label>
+                            <textarea name="" id="question7" placeholder="Введите текст"
+                                class="question__answer-text"></textarea>
+                        </li>
+                        <li class="question question-item content-wrapper">
+                            <label for="question8">
+                                <h3 class="question__title title">Как происходит взаимодействие с куратором?</h3>
+                                <p class="question__question-number">Вопрос 8/10</p>
+                            </label>
+                            <textarea name="" id="question8" placeholder="Введите текст"
+                                class="question__answer-text"></textarea>
+                        </li>
+                        <li class="question question-item content-wrapper">
+                            <label for="question9">
+                                <h3 class="question__title title">С какими проблемами сталкиваешься во время работы над
+                                    проектом?</h3>
+                                <p class="question__question-number">Вопрос 9/10</p>
+                            </label>
+                            <textarea name="" id="question9" placeholder="Введите текст"
+                                class="question__answer-text"></textarea>
+                        </li>
+                        <li class="question question-item content-wrapper">
+                            <label for="question10">
+                                <h3 class="question__title title">Где и как ты узнаешь о новостях пд и инженерного
+                                    проектирования ?</h3>
+                                <p class="question__question-number">Вопрос 10/10</p>
+                            </label>
+                            <textarea name="" id="question10" placeholder="Введите текст"
                                 class="question__answer-text"></textarea>
                         </li>
                     </ul>
@@ -116,15 +170,14 @@
             </section>
             <section class="survey-preview survey-result content-wrapper">
                 <h2 class="survey-preview__title">Опрос завершен</h2>
-                <p class="survey-preview__text">
-                    Спасибо, что прошел опрос!
+                <p class="survey-preview__text survey-preview__text--without-margin">
+                    Спасибо за уделенное время!
                 </p>
-                <p class="survey-preview__text">Мы делаем Политех лучше!</p>
             </section>
         </div>
     </main>
 
-
+    <script src="autosize.min.js"></script>
     <script src="script.js"></script>
 </body>
 
