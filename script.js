@@ -21,12 +21,10 @@ function startSurvey() {
   surveyPreviewPage.classList.add('close')
   setTimeout(() => {
     surveyPreviewPage.classList.add('display-none')
-  }, 500)
-
-  setTimeout(() => {
     questionsPage.classList.add('open')
     questionsPage.classList.remove('display-none')
   }, 500)
+
   setTimeout(() => {
     questionsPage.classList.add('center')
   }, 600)
@@ -65,10 +63,10 @@ function sendAnswers(event) {
 
   const answers = answerFields.map((field) => field.value)
 
-  if (checkAllEmptyFields(answers)){
-      warningTextParagraph.textContent = 'Ты не заполнил ни одного поля'
-      handleError()
-      return
+  if (checkAllEmptyFields(answers)) {
+    warningTextParagraph.textContent = 'Ты не заполнил ни одного поля'
+    handleError()
+    return
   }
   fetch(url, {
     headers: {
@@ -83,12 +81,10 @@ function sendAnswers(event) {
         questionsPage.classList.add('close')
         setTimeout(() => {
           questionsPage.classList.add('display-none')
-        }, 500)
-
-        setTimeout(() => {
           surveyResultPage.classList.add('open')
           surveyResultPage.classList.remove('display-none')
         }, 500)
+
         setTimeout(() => {
           surveyResultPage.classList.add('center')
         }, 600)
