@@ -17,6 +17,7 @@ surveyResultPage.classList.add('display-none')
 
 buttonToStartSurvey.addEventListener('click', startSurvey)
 buttonToSendAnswers.addEventListener('click', sendAnswers)
+
 window.addEventListener('load', activateLocalStorage)
 
 function startSurvey() {
@@ -33,13 +34,10 @@ function startSurvey() {
 }
 
 function activateLocalStorage() {
-  // if (localStorage.length) {
-  //   buttonToStartSurvey.textContent = 'Продолжить'
-  // }
-
   let keys = Object.keys(localStorage)
+  console.log(localStorage)
   for (let key of keys) {
-    if (key.includes('question') && localStorage.getItem(key)){ 
+    if (key.slice(0,8) === 'question' && localStorage.getItem(key)){ 
       buttonToStartSurvey.textContent = 'Продолжить'
       break
     }
@@ -47,14 +45,17 @@ function activateLocalStorage() {
 
   answerFields.forEach((answer) => {
     answer.value = localStorage.getItem(`${answer.id}`)
+    answer.style.height = localStorage.getItem(`height${answer.id}`)
     answer.addEventListener('input', setAnswerValues)
   })
 }
 
 function setAnswerValues(event) {
   const answer = event.target
-
+  const ComputedStyle = getComputedStyle(event.target)
+  
   localStorage.setItem(answer.id, answer.value)
+  localStorage.setItem(`height${answer.id}`,ComputedStyle.height)
 }
 
 function sendAnswers(event) {
@@ -74,6 +75,8 @@ function sendAnswers(event) {
   const answers = answerFields.map((field) => field.value)
 
   if (checkAllEmptyFields(answers)) {
+    questionsPage.addEventListener('click', removeWarningTextParagraph)
+    
     warningTextParagraph.textContent = 'Ты не заполнил(а) ни одного поля'
     handleError()
     return
@@ -115,6 +118,14 @@ function sendAnswers(event) {
     buttonToSendAnswers.lastElementChild.classList.add('display-none')
     warningTextParagraph.classList.remove('display-none')
   }
+  function removeWarningTextParagraph(event){
+    const target = event.target
+    
+    if (target.tagName === 'TEXTAREA'){
+      warningTextParagraph.classList.add('display-none')
+    }
+    
+  }
 }
 
 function checkAllEmptyFields(answers) {
@@ -122,3 +133,5 @@ function checkAllEmptyFields(answers) {
 
   return isAllEmptyFields
 }
+
+
