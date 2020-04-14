@@ -11,7 +11,6 @@ button {
   color: inherit;
   background-color: transparent;
   cursor: pointer;
-
 }
 button:hover {
   background-color: #7347ef;
@@ -41,7 +40,6 @@ body {
   background-color: #f7f5f8;
   color: #242424;
   font-family: 'Open Sans', sans-serif;
-  height: 100vh;
 }
 
 .header__title {
@@ -235,10 +233,12 @@ body {
 }
 
 .footer{
-  margin: 40px 0;
+  width: 100%;
+  margin: 20px 0;
+  text-align: center;
 }
 .footer__text{
-  text-align: center;
+  margin: 0 auto;
   font-family: 'Open Sans', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
 }

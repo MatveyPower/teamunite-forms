@@ -9,11 +9,13 @@ const buttonToSendAnswers = document.querySelector('.questions__button')
 const surveyResultPage = document.querySelector('.survey-result')
 const answerFields = [...document.querySelectorAll('.question__answer-text')]
 const wrapper = document.querySelectorAll('.wrapper')
+const footer = document.querySelector('.footer')
 
 autosize(answerFields)
 
 questionsPage.classList.add('display-none')
 surveyResultPage.classList.add('display-none')
+footer.classList.add('display-none')
 
 buttonToStartSurvey.addEventListener('click', startSurvey)
 buttonToSendAnswers.addEventListener('click', sendAnswers)
@@ -26,6 +28,7 @@ function startSurvey() {
     surveyPreviewPage.classList.add('display-none')
     questionsPage.classList.add('open')
     questionsPage.classList.remove('display-none')
+    footer.classList.remove('display-none')
   }, 500)
 
   setTimeout(() => {
@@ -35,7 +38,6 @@ function startSurvey() {
 
 function activateLocalStorage() {
   let keys = Object.keys(localStorage)
-  console.log(localStorage)
   for (let key of keys) {
     if (key.slice(0, 8) === 'question' && localStorage.getItem(key)) {
       buttonToStartSurvey.textContent = 'Продолжить'
@@ -52,10 +54,10 @@ function activateLocalStorage() {
 
 function setAnswerValues(event) {
   const answer = event.target
-  const ComputedStyle = getComputedStyle(event.target)
+  const computedStyle = getComputedStyle(event.target)
 
   localStorage.setItem(answer.id, answer.value)
-  localStorage.setItem(`height${answer.id}`, ComputedStyle.height)
+  localStorage.setItem(`height${answer.id}`, computedStyle.height)
 }
 
 function sendAnswers(event) {
@@ -123,6 +125,7 @@ function sendAnswers(event) {
 
     if (target.tagName === 'TEXTAREA') {
       warningTextParagraph.classList.add('display-none')
+      questionsPage.removeEventListener('click', removeWarningTextParagraph)
     }
   }
 }
