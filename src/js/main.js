@@ -15,7 +15,6 @@ autosize(answerFields)
 
 questionsPage.classList.add('display-none')
 surveyResultPage.classList.add('display-none')
-footer.classList.add('display-none')
 
 buttonToStartSurvey.addEventListener('click', startSurvey)
 buttonToSendAnswers.addEventListener('click', sendAnswers)
