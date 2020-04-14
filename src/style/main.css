@@ -98,8 +98,9 @@ body {
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  width: 145px;
-  height: 43px;
+  font-size: 14px;
+  width: 118px;
+  height: 39px;
 }
 
 .survey-preview__button {
@@ -203,6 +204,11 @@ body {
 
   .question__answer-text {
     font-size: 15px;
+  }
+  .button{
+    font-size: 18px;
+    width: 145px;
+    height: 43px;
   }
 }
 
